@@ -1,7 +1,6 @@
 pipeline{
   agent any
   environment {
-  PATH = environment {
   PATH = "{$path}:${getTerraformPath()}"
 }
 
