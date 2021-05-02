@@ -8,4 +8,8 @@ stages{
   }
   }
   }
+def getTerraformpath(){
+def tfHome = name: 'terraform', type: 'terraform'
+return tfHome
+}
 
