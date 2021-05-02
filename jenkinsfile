@@ -7,3 +7,11 @@ stages{
 steps{
   sh "terraform init"
 }
+steps{
+  sh "terraform plan"
+}
+steps{
+  sh "terraform apply -auto-approve"
+}
+}
+}
