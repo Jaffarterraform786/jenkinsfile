@@ -13,4 +13,3 @@ steps{
 steps{
   sh "terraform apply -auto-approve"
 }
-}
