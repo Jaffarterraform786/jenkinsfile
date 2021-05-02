@@ -1,4 +1,4 @@
-pipeline {
+pipeline{
   agent any
 }
 stages{
@@ -12,6 +12,5 @@ steps{
 }
 steps{
   sh "terraform apply -auto-approve"
-}
 }
 }
