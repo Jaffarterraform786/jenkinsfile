@@ -17,3 +17,9 @@ stages{
   tfHome = tool name: 'terraform 0.15', type: 'terraform'
   return tfHome
   }
+post {
+// notify users when pipeline is success
+success {
+slacksend (color: '009933')
+echo "pipeline successful"
+}
