@@ -23,3 +23,4 @@ success {
 slacksend (channel: '#jenkins-deployments', color: '009933')
 echo "pipeline successful"
 }
+}
