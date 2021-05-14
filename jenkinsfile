@@ -11,6 +11,11 @@ stages{
       sh 'terraform apply -auto-approve'
     }
   }
+  stage('jenkins build alerts'){
+  steps{
+  slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-deployments', color: '#009933', teamDomain: 'jenkinsteamtalk', tokenCredentialId: 'slack-jenkins1'
+  }
+  }
   }
   }
   def getTerraformPath(){
