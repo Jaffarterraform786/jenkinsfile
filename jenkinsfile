@@ -3,7 +3,10 @@ pipeline{
   environment {
   PATH = "{$path}:${getTerraformPath()}"
 }
-
+def getTerraformPath(){
+  tfHome = tool name: 'terraform 0.15', type: 'terraform'
+  return tfHome
+  }
 stages{
   stage('terraform init'){
     steps{
@@ -12,11 +15,7 @@ stages{
     }
   }
   }
-  def getTerraformPath(){
-  tfHome = tool name: 'terraform 0.15', type: 'terraform'
-  return tfHome
-  }
-post {
+  post {
    success {
 slacksend channel: '#jenkins-deployments', color: '009933'
 echo "pipeline successful"
