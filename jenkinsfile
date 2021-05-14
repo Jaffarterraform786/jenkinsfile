@@ -17,10 +17,8 @@ stages{
   return tfHome
   }
 post {
-   
-// notify users when pipeline is success
-success {
-slacksend (channel: '#jenkins-deployments', color: '009933')
+   success {
+slacksend channel: '#jenkins-deployments', color: '009933'
 echo "pipeline successful"
 }
 }
