@@ -20,6 +20,6 @@ stages{
 post {
 // notify users when pipeline is success
 success {
-slacksend (color: '009933')
+slacksend (channel: '#jenkins-deployments', color: '009933')
 echo "pipeline successful"
 }
