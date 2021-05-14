@@ -18,9 +18,13 @@ stages{
   return tfHome
   }
 post {
+   always {
+   cleanWs()
+   }
 // notify users when pipeline is success
 success {
 slacksend (channel: '#jenkins-deployments', color: '009933')
 echo "pipeline successful"
+}
 }
 }
